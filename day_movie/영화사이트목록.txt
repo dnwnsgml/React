@@ -1,0 +1,15 @@
+Movie API는 YTS 에서 만든 API이다. 
+
+yts.mx/api#list_movies
+
+https://yts.mx/api/v2/list_movies.json 불법
+https://yts-proxy.now.sh/list_movies.json
+ https://yts-proxy.now.sh/list_movies.json?sort_by=rating  정렬을 위해서 수정
+
+- application은 render를 한다.
+- 처음에는 isLoading : true이므로 '로딩'을 보여준다.
+- application이 mount 된 후(componentDidMount), getMovies() 을 호출한다.
+- getMovies()는 axios.get을 사용한다. 하지만 axios.get은 완료되기까지 
+시간이 조금 필요해서 await를 넣었다.
+- 하지만 await를 쓰기 위해선 이 함수가 비동기 함수여야 한다. 고로 async를 붙인것이다.
+- 이제 axios 접근이 끝날때까지 기다리게 될 것이다.
